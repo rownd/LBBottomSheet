@@ -9,12 +9,17 @@ let package = Package(
     products: [
         .library(
             name: "LBBottomSheet",
-            targets: ["LBBottomSheet"]),
+            targets: ["LBBottomSheet"]
+        ),
     ],
     targets: [
         .target(
             name: "LBBottomSheet",
-            dependencies: [])
+            dependencies: [],
+            swiftSettings: [
+                .define("SPM")
+            ]
+        )
     ],
     swiftLanguageVersions: [.v5]
 )
