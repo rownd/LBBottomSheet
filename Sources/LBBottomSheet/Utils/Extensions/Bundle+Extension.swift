@@ -23,7 +23,7 @@ import Foundation
 #if !SPM
 
 extension Bundle {
-    static var module:Bundle { Bundle(identifier: "LBBottomSheet")! }
+    static var module:Bundle { Bundle(for: BottomSheetController.self) }
 }
 
 #endif
