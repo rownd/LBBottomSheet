@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "LBBottomSheet"
-  s.version          = "1.0.19"
+  s.version          = "1.0.20"
   s.summary          = "LBBottomSheet"
   s.description      = "Rownd fork of LunabeeStodio/LBBottomSheet"
   s.homepage         = "https://github.com/rownd/LBBottomSheet"
