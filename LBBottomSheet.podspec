@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '11.0'
 
-  s.resources = "Sources/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+  # s.resources = "Sources/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
 
   s.requires_arc     = true
   s.source_files     = 'Sources/**/*'
