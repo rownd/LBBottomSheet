@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "LBBottomSheet"
-  s.version          = "1.0.20"
+  s.version          = "1.0.21"
   s.summary          = "LBBottomSheet"
   s.description      = "Rownd fork of LunabeeStodio/LBBottomSheet"
   s.homepage         = "https://github.com/rownd/LBBottomSheet"
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '11.0'
 
-  # s.resources = "Sources/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+  s.resources = "Sources/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
 
   s.requires_arc     = true
   s.source_files     = 'Sources/**/*'
