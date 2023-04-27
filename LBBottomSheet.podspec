@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '11.0'
 
-  s.resources = s.resources = ["Sources/LBBottomSheet/Resources/BottomSheet.storyboard"]
+  s.resources = ["Sources/LBBottomSheet/Resources/BottomSheet.storyboard"]
 
   s.requires_arc     = true
   s.source_files     = 'Sources/**/*'
