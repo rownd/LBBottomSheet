@@ -16,6 +16,7 @@ let package = Package(
         .target(
             name: "LBBottomSheet",
             dependencies: [],
+            resources: [.process("Resources")],
             swiftSettings: [
                 .define("SPM")
             ]
