@@ -62,6 +62,9 @@ public final class BottomSheetController: UIViewController {
     
     public private(set) var theme: Theme = Theme()
     public private(set) var behavior: Behavior = Behavior()
+    
+    public var overrideCanTouchDimmingBackgroundToDismiss: Bool? = nil
+    
     private let minTopMargin: CGFloat = 40.0
     private var didAlreadyStartAppearing: Bool = false
     
@@ -114,6 +117,25 @@ public final class BottomSheetController: UIViewController {
         setInitialPosition()
         setupDimmingBackground()
         makeAppearing()
+    }
+    
+    @IBAction func dismissButtonPressed(_ sender: Any) {
+        func dismissBottomSheet() {
+            dismiss()
+            bottomSheetInteractionDelegate?.bottomSheetInteractionDidTapOutside()
+        }
+        
+        let override = overrideCanTouchDimmingBackgroundToDismiss as! Bool?
+        if (override != nil) {
+            if (override == true) {
+                dismissBottomSheet()
+            }
+            return
+        }
+        
+        if behavior.canTouchDimmingBackgroundToDismiss {
+            dismissBottomSheet()
+        }
     }
     
     /// Call this function to tell the bottom sheet the embedded controller height did change.
@@ -590,12 +612,12 @@ private extension BottomSheetController {
     }
 }
 
-// MARK: - Actions -
-private extension BottomSheetController {
-    @IBAction func dismissButtonPressed(_ sender: Any) {
-        if behavior.canTouchDimmingBackgroundToDismiss {
-            dismiss()
-            bottomSheetInteractionDelegate?.bottomSheetInteractionDidTapOutside()
-        }
-    }
-}
+//// MARK: - Actions -
+//private extension BottomSheetController {
+//    @IBAction func dismissButtonPressed(_ sender: Any) {
+//        if behavior.canTouchDimmingBackgroundToDismiss {
+//            dismiss()
+//            bottomSheetInteractionDelegate?.bottomSheetInteractionDidTapOutside()
+//        }
+//    }
+//}
