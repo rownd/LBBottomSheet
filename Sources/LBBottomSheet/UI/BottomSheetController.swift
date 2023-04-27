@@ -116,6 +116,10 @@ public final class BottomSheetController: UIViewController {
         makeAppearing()
     }
     
+    public func setCanTouchDimmingBackgroundToDismiss(_ enable: Bool) {
+        behavior.canTouchDimmingBackgroundToDismiss = enable
+    }
+    
     /// Call this function to tell the bottom sheet the embedded controller height did change.
     /// This way, this controller will calculate the new needed height and the bottom sheet layout will be updated.
     public func preferredHeightInBottomSheetDidUpdate() {
@@ -593,9 +597,9 @@ private extension BottomSheetController {
 // MARK: - Actions -
 private extension BottomSheetController {
     @IBAction func dismissButtonPressed(_ sender: Any) {
+        bottomSheetInteractionDelegate?.bottomSheetInteractionDidTapOutside()
         if behavior.canTouchDimmingBackgroundToDismiss {
             dismiss()
-            bottomSheetInteractionDelegate?.bottomSheetInteractionDidTapOutside()
         }
     }
 }
