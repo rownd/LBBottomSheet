@@ -62,7 +62,6 @@ public final class BottomSheetController: UIViewController {
     
     public private(set) var theme: Theme = Theme()
     public private(set) var behavior: Behavior = Behavior()
-    
     private let minTopMargin: CGFloat = 40.0
     private var didAlreadyStartAppearing: Bool = false
     
